@@ -1,5 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script lang="ts">
+import type { Product } from './Product';
 import ProductCard from './ProductCard.vue';
 
 export default {
@@ -8,16 +9,13 @@ export default {
     },
     data(){
         return{
-            products: [
+            products: <Array<Product>> [
                 {name: 'Silla', price: 56},
                 {name: 'Monitor', price:450},
-                {name: 'Micrófono', price:120},
+                {name: 'Micrófono', price:20}
             ]
         }
-    },
-    methods:{
-
-    },
+    }
 }
 </script>
 
