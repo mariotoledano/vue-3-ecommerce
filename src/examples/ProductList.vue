@@ -10,10 +10,15 @@ export default {
     data(){
         return{
             products: <Array<Product>> [
-                {name: 'Silla', price: 56},
-                {name: 'Monitor', price:450},
-                {name: 'Micrófono', price:20}
+                {name: 'Silla', price: 56, id: 5},
+                {name: 'Monitor', price:450, id: 7},
+                {name: 'Micrófono', price:20, id: 20}
             ]
+        }
+    },
+    methods : {
+        onProductAdded(productId: number) {
+            console.log('Agregar producto ' + productId)
         }
     }
 }
@@ -22,5 +27,7 @@ export default {
 <template>
     <ProductCard 
     v-for="p in products" 
-    :product="p"/>
+    :product="p"
+    v-on:addProduct="onProductAdded(p.id)"    
+    />
 </template>

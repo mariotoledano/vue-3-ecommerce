@@ -10,11 +10,21 @@ export default {
             required: true
         } 
     },
+    methods: {
+        onAddButtonClick(){
+           // console.log("Agregando producto" + this.product.id)
+           this.$emit("addProduct")
+        }
+    },
+    emits: ['addProduct']
 }
 </script>
 
 <template>
     <p>Nombre: {{ product.name }}</p>
-    <p>Nombre: {{ product.price }}</p>
+    <p>Precio: {{ product.price }}</p>
+    <button @click="onAddButtonClick">
+        Agregar al carrito
+    </button>
     <hr/>
 </template>
