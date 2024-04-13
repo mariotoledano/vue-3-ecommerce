@@ -1,11 +1,13 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script lang="ts">
-import type { Product } from './Product';
+import type { CardDetail, Product } from './types';
 import ProductCard from './ProductCard.vue';
+import Cart from './Cart.vue';
 
 export default {
     components:{
-        ProductCard
+        ProductCard,
+        Cart
     },
     data(){
         return{
@@ -13,12 +15,17 @@ export default {
                 {name: 'Silla', price: 56, id: 5},
                 {name: 'Monitor', price:450, id: 7},
                 {name: 'Micrófono', price:20, id: 20}
-            ]
+            ],
+            details: <Array<CardDetail>>[]
         }
     },
     methods : {
         onProductAdded(productId: number) {
-            console.log('Agregar producto ' + productId)
+            //console.log('Agregar producto ' + productId)
+            this.details.push({
+                productId,
+                quantity: 1
+            });
         }
     }
 }
@@ -30,4 +37,5 @@ export default {
     :product="p"
     v-on:addProduct="onProductAdded(p.id)"    
     />
+    <Cart :details="details"/>
 </template>
