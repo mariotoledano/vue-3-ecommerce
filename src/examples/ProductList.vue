@@ -11,7 +11,7 @@ export default {
     },
     data(){
         return{
-            products: <Array<Product>> [
+            products: <Array<Product>>[
                 {name: 'Silla', price: 56, id: 5},
                 {name: 'Monitor', price:450, id: 7},
                 {name: 'Micrófono', price:20, id: 20}
@@ -22,10 +22,17 @@ export default {
     methods : {
         onProductAdded(productId: number) {
             //console.log('Agregar producto ' + productId)
-            this.details.push({
+            const detailFound = this.details.find(d => d.productId == productId);
+            
+            if (detailFound) {
+                detailFound.quantity += 1;
+            } else{
+                this.details.push({
                 productId,
                 quantity: 1
             });
+
+            }
         }
     }
 }

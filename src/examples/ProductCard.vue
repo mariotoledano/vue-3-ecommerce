@@ -21,6 +21,7 @@ export default {
 </script>
 
 <template>
+    <v-card text="Ejemplo"></v-card>
     <p>Nombre: {{ product.name }}</p>
     <p>Precio: {{ product.price }}</p>
     <button @click="onAddButtonClick">
