@@ -21,11 +21,21 @@ export default {
 </script>
 
 <template>
-    <v-card text="Ejemplo"></v-card>
-    <p>Nombre: {{ product.name }}</p>
-    <p>Precio: {{ product.price }}</p>
-    <button @click="onAddButtonClick">
-        Agregar al carrito
-    </button>
-    <hr/>
+    <v-card>
+        <v-img
+            src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+            height="200px"
+            cover
+            />
+        <v-card-title>{{ product.name }}</v-card-title>
+        <v-card-text>
+            <p class="mb-4">Esta es una descripción de ejemplo.</p>
+            <v-chip>$ {{ product.price }}</v-chip>
+        </v-card-text>
+        <v-card-actions>
+            <v-btn @click="onAddButtonClick" color="orange-lighten-2">
+                Agregar al carrito
+            </v-btn>
+        </v-card-actions>
+    </v-card>
 </template>

@@ -39,10 +39,15 @@ export default {
 </script>
 
 <template>
-    <ProductCard 
-    v-for="p in products" 
-    :product="p"
-    v-on:addProduct="onProductAdded(p.id)"    
-    />
+<v-container>
+    <v-row>
+        <v-col v-for="p in products" cols="4">
+            <ProductCard            
+                :product="p"
+                v-on:addProduct="onProductAdded(p.id)"/>
+        </v-col>
+    </v-row>
+</v-container>
+
     <Cart :details="details"/>
 </template>
