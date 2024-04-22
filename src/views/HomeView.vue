@@ -1,8 +1,17 @@
-<script setup lang="ts">
+<script lang="ts">
+import ProductList from '@/components/ProductList.vue';
+
+export default{
+  components: {
+    ProductList
+  }, 
+    props: ['details']
+}
+
 </script>
 
 <template>
   <main>
-    Home View
+    <ProductList :details="details"/>
   </main>
 </template>

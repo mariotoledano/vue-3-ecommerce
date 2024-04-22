@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script lang="ts">
 import type { PropType } from 'vue';
-import type { Product } from './types'
+import type { Product } from '../model/types'
 
 export default {
     props:{
