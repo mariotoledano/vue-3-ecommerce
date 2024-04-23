@@ -38,7 +38,7 @@ export default {
     <v-main>
       <v-container>
         <!--Router view muestra los componentes de la dirección-->
-        <RouterView :details="'details'"/>
+        <RouterView/>
       </v-container>
     </v-main>
   </v-app>
