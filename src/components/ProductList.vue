@@ -16,6 +16,9 @@ export default {
                 {name:'Silla', price:56, id:5},
                 {name: 'Monitor', price:450, id: 7},
                 {name: 'Micrófono', price:20, id: 20},
+                {name:'Silla', price:56, id:5},
+                {name: 'Monitor', price:450, id: 7},
+                {name: 'Micrófono', price:20, id: 20},
             ]
         }
     },
@@ -36,5 +39,4 @@ export default {
                 v-on:addProduct="onProductAdded(p.id)"/>
         </v-col>
     </v-row>
-    <Cart :details="details"/>
 </template>
