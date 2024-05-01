@@ -11,6 +11,9 @@ import router from './router'
 import App from './App.vue'
 //Pinia
 import { createPinia } from 'pinia'
+//Material Icons
+import '@mdi/font/css/materialdesignicons.css'
+
 
 const vuetify = createVuetify({
   components,

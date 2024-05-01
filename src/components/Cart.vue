@@ -1,6 +1,6 @@
 <script lang="ts">
 import { useCartStore } from '@/stores/cart';
-
+import { RouterLink } from 'vue-router';
 export default {
     methods: {
         decrementQuantity(productId: number){
@@ -28,22 +28,31 @@ export default {
 <v-card class="mt-4">
     <v-card-title>Productos agregados al carrito</v-card-title>
     <v-card-text>
-        <v-list>
+        <v-list v-if="details.length > 0">
             <v-list-item v-for="detail in details" :value="detail.productId">
                 <v-list-item-title>
-                    <v-btn @click="decrementQuantity(detail.productId)">
-                        -
-                    </v-btn>
-                    Product {{ detail.productId }} (Qty: {{detail.quantity}})
-                    <v-btn @click="incrementQuantity(detail.productId)">
-                        +
-                    </v-btn>
-                    <v-btn @click="deleteProduct(detail.productId)">
-                        Eliminar
-                    </v-btn>
+                    Product {{ detail.productId }} 
+                    <v-btn
+                        class="ml-2"
+                        icon="mdi-minus"
+                        size="x-small" 
+                        @click="decrementQuantity(detail.productId)"/>
+                   Cantidad: {{detail.quantity}}
+                    <v-btn
+                        icon="mdi-plus"
+                        size="x-small" 
+                        @click="incrementQuantity(detail.productId)"/>
+                    <v-btn
+                        class="ml-2"
+                        size="x-small"
+                        icon="mdi-delete" 
+                        @click="deleteProduct(detail.productId)"/>
                 </v-list-item-title>
             </v-list-item>
         </v-list>
+        <p v-else>Aún no has agregado productos a tu carrito de compra.
+            Haz <RouterLink to="/">click aquí</RouterLink> para ve rlos productos disponibles.
+        </p>
     </v-card-text>
 </v-card>
 
