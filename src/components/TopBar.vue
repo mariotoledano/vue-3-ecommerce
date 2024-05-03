@@ -23,7 +23,7 @@ export default{
             </v-avatar>
 
             <RouterLink to="/" custom v-slot="{ navigate }">
-                <v-btn prepend-icon="mdi-home-variant" :active="$route.name === 'home'"  variant="text" @click="navigate">Home </v-btn>
+                <v-btn prepend-icon="mdi-home-variant" :active="$route.name === 'home' || $route.name ==='category'"  variant="text" @click="navigate">Home </v-btn>
             </RouterLink>
             <RouterLink to="/cart" custom v-slot="{ navigate }">
                 <v-badge :content="itemsCount" :model-value="itemsCount > 0" color="orange-lighten-2">
